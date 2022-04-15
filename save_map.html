@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_2984513d66fa48c38ea198c7a056f7ab {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_2984513d66fa48c38ea198c7a056f7ab" ></div>
+        
+</body>
+<script>    
+    
+            var map_2984513d66fa48c38ea198c7a056f7ab = L.map(
+                "map_2984513d66fa48c38ea198c7a056f7ab",
+                {
+                    center: [34.2634, 109.0432],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 16,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_2984513d66fa48c38ea198c7a056f7ab);
+
+            
+
+        
+    
+            var tile_layer_8a212b95121c412880fe22bfc107a123 = L.tileLayer(
+                "http://webrd02.is.autonavi.com/appmaptile?lang=zh_cn\u0026size=1\u0026scale=1\u0026style=7\u0026x={x}\u0026y={y}\u0026z={z}",
+                {"attribution": "default", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_2984513d66fa48c38ea198c7a056f7ab);
+        
+    
+                var lat_lng_popup_078bf9bb7d73479c94c80380f6ce9be5 = L.popup();
+                function latLngPop(e) {
+                    lat_lng_popup_078bf9bb7d73479c94c80380f6ce9be5
+                        .setLatLng(e.latlng)
+                        .setContent("Latitude: " + e.latlng.lat.toFixed(4) +
+                                    "<br>Longitude: " + e.latlng.lng.toFixed(4))
+                        .openOn(map_2984513d66fa48c38ea198c7a056f7ab);
+                    }
+                map_2984513d66fa48c38ea198c7a056f7ab.on('click', latLngPop);
+            
+    
+                function newMarker(e){
+                    var new_mark = L.marker().setLatLng(e.latlng).addTo(map_2984513d66fa48c38ea198c7a056f7ab);
+                    new_mark.dragging.enable();
+                    new_mark.on('dblclick', function(e){ map_2984513d66fa48c38ea198c7a056f7ab.removeLayer(e.target)})
+                    var lat = e.latlng.lat.toFixed(4),
+                       lng = e.latlng.lng.toFixed(4);
+                    new_mark.bindPopup("Waypoint");
+                    };
+                map_2984513d66fa48c38ea198c7a056f7ab.on('click', newMarker);
+            
+    
+            var poly_line_08b40869c6bf4d869c480c976a25620e = L.polyline(
+                [[34.2634, 109.0432], [36.2688, 109.0432], [37.2699, 109.0432], [38.2777, 109.0432]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_2984513d66fa48c38ea198c7a056f7ab);
+        
+    
+            var circle_2788ccadbbc2411f9d597f772f4f8c9b = L.circle(
+                [34.2634, 109.0432],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 50, "stroke": true, "weight": 3}
+            ).addTo(map_2984513d66fa48c38ea198c7a056f7ab);
+        
+    
+        var popup_2422d2f9d9c44d2fa06e2e02cb5e00a2 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_73ae3665be024f83993495dca0fbe75b = $(`<div id="html_73ae3665be024f83993495dca0fbe75b" style="width: 100.0%; height: 100.0%;">Laurelhurst Park</div>`)[0];
+            popup_2422d2f9d9c44d2fa06e2e02cb5e00a2.setContent(html_73ae3665be024f83993495dca0fbe75b);
+        
+
+        circle_2788ccadbbc2411f9d597f772f4f8c9b.bindPopup(popup_2422d2f9d9c44d2fa06e2e02cb5e00a2)
+        ;
+
+        
+    
+    
+            var circle_marker_477f4c150fe6494192b3f871bc4733ff = L.circleMarker(
+                [34.2634, 109.0432],
+                {"bubblingMouseEvents": true, "color": "#DC143C", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6495E", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1, "stroke": true, "weight": 3}
+            ).addTo(map_2984513d66fa48c38ea198c7a056f7ab);
+        
+    
+        var popup_dc5b994803f94b589171589d00ba3edd = L.popup({"maxWidth": "100%"});
+
+        
+            var html_52b1c79d1d554595a4218f88d6190c0b = $(`<div id="html_52b1c79d1d554595a4218f88d6190c0b" style="width: 100.0%; height: 100.0%;">popup</div>`)[0];
+            popup_dc5b994803f94b589171589d00ba3edd.setContent(html_52b1c79d1d554595a4218f88d6190c0b);
+        
+
+        circle_marker_477f4c150fe6494192b3f871bc4733ff.bindPopup(popup_dc5b994803f94b589171589d00ba3edd)
+        ;
+
+        
+    
+    
+            var marker_8b484d89953d491aab554b48fe9c4dd9 = L.marker(
+                [34.2634, 109.0432],
+                {}
+            ).addTo(map_2984513d66fa48c38ea198c7a056f7ab);
+        
+    
+        var custom_icon_6702dbdf018c4485b550d676e73a7b5d = L.icon({"iconAnchor": [22, 94], "iconSize": [38, 95], "iconUrl": "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F00%2F94%2F03%2F2956f2b5da690d2.jpg%21rw400\u0026refer=http%3A%2F%2Fbpic.588ku.com\u0026app=2002\u0026size=f9999,10000\u0026q=a80\u0026n=0\u0026g=0n\u0026fmt=jpeg?sec=1638535529\u0026t=46e106bf37a49b24a4acc772bd5951ba", "popupAnchor": [-3, -76], "shadowAnchor": [4, 62], "shadowSize": [50, 64], "shadowUrl": "https://profile.csdnimg.cn/9/7/A/3_zhangphil"});
+        marker_8b484d89953d491aab554b48fe9c4dd9.setIcon(custom_icon_6702dbdf018c4485b550d676e73a7b5d);
+        
+    
+        var popup_7961c4bdc78c4f9a9d0a62e232ac9e4c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_53a668376b3446e191706af4f40d558c = $(`<div id="html_53a668376b3446e191706af4f40d558c" style="width: 100.0%; height: 100.0%;">zhang phil</div>`)[0];
+            popup_7961c4bdc78c4f9a9d0a62e232ac9e4c.setContent(html_53a668376b3446e191706af4f40d558c);
+        
+
+        marker_8b484d89953d491aab554b48fe9c4dd9.bindPopup(popup_7961c4bdc78c4f9a9d0a62e232ac9e4c)
+        ;
+
+        
+    
+</script>

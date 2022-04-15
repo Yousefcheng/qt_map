@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "qwebchannel": "^5.9.0"
+  }
+}
